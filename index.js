@@ -1,9 +1,13 @@
 var katzDeli = [];
+var customersToday = 0;
 
-function takeANumber(katzDeliLine,newPersonName){
-  katzDeliLine.push(newPersonName);
-  return "Welcome, " + newPersonName + ". You are number " + katzDeliLine.length + " in line.";
+function takeANumber(katzDeliLine){
+  customersToday++;
+  katzDeliLine.push(customersToday);
+  return customersToday;
 }
+
+// when does the highest rate of customers 
 
 function nowServing(katzDeliLine){
   if (katzDeliLine.length > 0){
@@ -25,4 +29,8 @@ function currentLine(katzDeliLine){
     theLine = "The line is currently empty."
   }
   return theLine
+  //switching this variable from an array to a string is weird
+  //could have used the text formating abilites in javascript
+  //could have commented!
+  //probobly could have done something more elegant if I had abetter sense for the scope of an array
 }
